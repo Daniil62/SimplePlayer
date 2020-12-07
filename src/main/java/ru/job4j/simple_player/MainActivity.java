@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer player;
-    private int position;
+    private int position = 0;
     private Field[] tracks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton play = findViewById(R.id.play_imageButton);
         ImageButton pause = findViewById(R.id.pause_imageButton);
         ImageButton next = findViewById(R.id.next_imageButton);
-        position = 0;
         tracks = R.raw.class.getFields();
         player = MediaPlayer.create(this, trackSelector(position));
         previous.setOnClickListener(v -> previousClick());
